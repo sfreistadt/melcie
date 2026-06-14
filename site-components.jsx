@@ -102,6 +102,7 @@ function Nav() {
     { label: 'About', id: 'about' },
     { label: 'Services', id: 'services' },
     { label: 'Benefits', id: 'benefits' },
+    { label: 'Testimonials', id: 'testimonials' },
     { label: 'Hours', id: 'hours' },
     { label: 'FAQ', id: 'faq' },
     { label: 'Videos', id: 'videos' },
@@ -269,7 +270,7 @@ function Footer() {
         <div>
           <h4 style={{ fontFamily: SiteFonts.body, fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.4)',
             letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16 }}>Quick Links</h4>
-          {['about', 'services', 'benefits', 'hours', 'faq', 'contact'].map(item => (
+          {['about', 'services', 'benefits', 'testimonials', 'hours', 'faq', 'contact'].map(item => (
             <a key={item} href={`#${item}`} style={{
               fontFamily: SiteFonts.body, fontSize: 14, color: 'rgba(255,255,255,0.6)',
               display: 'block', margin: '0 0 10px', textDecoration: 'none',

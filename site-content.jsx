@@ -243,7 +243,7 @@ function TestimonialsSection() {
   }, []);
 
   return (
-    <section style={{ padding: `${mobile ? 48 : 80}px ${mobile ? 20 : 56}px`, background: C.green, textAlign: 'center' }}>
+    <section id="testimonials" style={{ padding: `${mobile ? 48 : 80}px ${mobile ? 20 : 56}px`, background: C.green, textAlign: 'center', scrollMarginTop: 80 }}>
       <SectionLabel><span style={{ color: 'rgba(255,255,255,0.5)' }}>What Clients Say</span></SectionLabel>
       <h2 style={{ fontFamily: F.heading, fontSize: mobile ? 28 : 36, fontWeight: 400, color: '#fff', margin: '0 0 24px' }}>Client Testimonials</h2>
       <div style={{ maxWidth: 640, margin: '0 auto', minHeight: mobile ? 200 : 160, position: 'relative' }}>
