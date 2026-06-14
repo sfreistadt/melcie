@@ -297,7 +297,10 @@ function Footer() {
         fontFamily: SiteFonts.body, fontSize: 12, color: 'rgba(255,255,255,0.3)',
       }}>
         <span>© 2024 Melcie Massage. All rights reserved.</span>
-        <span>ABMP Member · LMT since 2007</span>
+        <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <img src="uploads/abmp-member-logo.png" alt="ABMP Member" style={{ height: 40 }} />
+          <span>ABMP Member · LMT since 2007</span>
+        </span>
       </div>
     </footer>
   );
