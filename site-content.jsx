@@ -42,7 +42,8 @@ function AboutSection() {
   return (
     <section id="about" style={{ padding: `${mobile ? 48 : 80}px ${px}px`, background: C.light, scrollMarginTop: 80 }}>
       <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr 1fr', gap: mobile ? 32 : 64, alignItems: 'start' }}>
-        <Placeholder label="portrait of Gracie — warm, approachable" h={mobile ? 300 : 580} />
+        <img src="uploads/gracie-photo.png" alt="Gracie performing massage therapy"
+          style={{ width: '100%', height: mobile ? 300 : 580, objectFit: 'cover', borderRadius: 8 }} />
         <div>
           <SectionLabel>About the Practitioner</SectionLabel>
           <h2 style={{ ...heading, fontSize: mobile ? 28 : 36, fontWeight: 400, margin: '0 0 24px', lineHeight: 1.35 }}>
