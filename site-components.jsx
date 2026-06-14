@@ -128,7 +128,7 @@ function Nav() {
         }}>
           <div style={{ cursor: 'pointer' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <img src={window.__resources?.logo || "MelcieLogo.png"}
-              alt="Melcie Massage" style={{ height: 54, display: 'block', borderRadius: 4 }} />
+              alt="Melcie Massage" style={{ height: 40, display: 'block', borderRadius: 4 }} />
           </div>
           <button onClick={() => setMenuOpen(!menuOpen)} style={{
             background: 'none', border: 'none', cursor: 'pointer', padding: 8,
@@ -183,7 +183,7 @@ function Nav() {
       {/* Center logo */}
       <div style={{ cursor: 'pointer' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
         <img src={window.__resources?.logo || "MelcieLogo.png"}
-          alt="Melcie Massage" style={{ height: 88, display: 'block', borderRadius: 4 }} />
+          alt="Melcie Massage" style={{ height: 52, display: 'block', borderRadius: 4 }} />
       </div>
 
       {/* Right links + CTA */}
