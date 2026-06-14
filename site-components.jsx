@@ -127,8 +127,8 @@ function Nav() {
           transition: 'box-shadow 0.3s',
         }}>
           <div style={{ cursor: 'pointer' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src={window.__resources?.logo || "MelcieLogo.jpg"}
-              alt="Melcie Massage" style={{ height: 36, display: 'block', borderRadius: 4 }} />
+            <img src={window.__resources?.logo || "MelcieLogo.png"}
+              alt="Melcie Massage" style={{ height: 54, display: 'block', borderRadius: 4 }} />
           </div>
           <button onClick={() => setMenuOpen(!menuOpen)} style={{
             background: 'none', border: 'none', cursor: 'pointer', padding: 8,
@@ -182,8 +182,8 @@ function Nav() {
 
       {/* Center logo */}
       <div style={{ cursor: 'pointer' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        <img src={window.__resources?.logo || "MelcieLogo.jpg"}
-          alt="Melcie Massage" style={{ height: 44, display: 'block', borderRadius: 4 }} />
+        <img src={window.__resources?.logo || "MelcieLogo.png"}
+          alt="Melcie Massage" style={{ height: 88, display: 'block', borderRadius: 4 }} />
       </div>
 
       {/* Right links + CTA */}
@@ -258,8 +258,8 @@ function Footer() {
       }}>
         {/* Logo + tagline */}
         <div>
-          <img src={window.__resources?.logo || "MelcieLogo.jpg"}
-            alt="Melcie Massage" style={{ height: 56, borderRadius: 4, marginBottom: 16, display: 'block' }} />
+          <img src={window.__resources?.logo || "MelcieLogo.png"}
+            alt="Melcie Massage" style={{ height: mobile ? 84 : 112, borderRadius: 4, marginBottom: 16, display: 'block' }} />
           <p style={{ fontFamily: SiteFonts.body, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>
             Revitalize &amp; Become Whole
           </p>
