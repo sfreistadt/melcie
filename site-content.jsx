@@ -81,9 +81,9 @@ function ServicesSection() {
   const heading = { fontFamily: F.heading, color: C.text };
 
   const pricing = [
-    { duration: '60 min', desc: 'Customized Massage', price: 80, firstTime: 70 },
-    { duration: '90 min', desc: 'Customized Massage', price: 110, firstTime: 100 },
-    { duration: '120 min', desc: 'Customized Massage', price: 140, firstTime: 130 },
+    { duration: '60 min', desc: 'Customized Massage', price: 80, firstTime: 70, url: 'https://www.schedulista.com/schedule/melciemassage/choose_time?provider_id=1073747439&service_id=1073764780' },
+    { duration: '90 min', desc: 'Customized Massage', price: 110, firstTime: 100, url: 'https://www.schedulista.com/schedule/melciemassage/choose_time?provider_id=1073747439&service_id=1073764781' },
+    { duration: '120 min', desc: 'Customized Massage', price: 140, firstTime: 130, url: 'https://www.schedulista.com/schedule/melciemassage/choose_time?provider_id=1073747439&service_id=1073764782' },
   ];
 
   return (
@@ -102,29 +102,31 @@ function ServicesSection() {
         </p>
 
         {pricing.map((p, i) => (
-          <div key={i} style={{
-            display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr auto auto', gap: mobile ? 12 : 24,
-            alignItems: mobile ? 'flex-start' : 'center', padding: mobile ? '20px' : '24px 32px',
-            background: C.white, border: `1px solid ${C.border}`, borderRadius: 8,
-            marginBottom: 12, transition: 'border-color 0.2s',
-          }}
-            onMouseEnter={e => e.currentTarget.style.borderColor = C.green}
-            onMouseLeave={e => e.currentTarget.style.borderColor = C.border}
-          >
-            <div>
-              <h3 style={{ ...heading, fontSize: 20, fontWeight: 400, margin: '0 0 4px' }}>{p.duration}</h3>
-              <p style={{ fontSize: 14, color: C.gray, margin: 0, fontFamily: F.body }}>{p.desc}</p>
-            </div>
-            <div style={{ textAlign: 'right' }}>
-              <span style={{ ...heading, fontSize: 24, fontWeight: 400 }}>${p.price}</span>
-            </div>
+          <a key={i} href={p.url} target="_blank" rel="noopener" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
             <div style={{
-              background: C.greenLight, padding: '6px 14px', borderRadius: 20,
-              fontSize: 12, color: C.green, fontWeight: 500, fontFamily: F.body, whiteSpace: 'nowrap',
-            }}>
-              First visit ${p.firstTime}
+              display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr auto auto', gap: mobile ? 12 : 24,
+              alignItems: mobile ? 'flex-start' : 'center', padding: mobile ? '20px' : '24px 32px',
+              background: C.white, border: `1px solid ${C.border}`, borderRadius: 8,
+              marginBottom: 12, transition: 'border-color 0.2s', cursor: 'pointer',
+            }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = C.green}
+              onMouseLeave={e => e.currentTarget.style.borderColor = C.border}
+            >
+              <div>
+                <h3 style={{ ...heading, fontSize: 20, fontWeight: 400, margin: '0 0 4px' }}>{p.duration}</h3>
+                <p style={{ fontSize: 14, color: C.gray, margin: 0, fontFamily: F.body }}>{p.desc}</p>
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                <span style={{ ...heading, fontSize: 24, fontWeight: 400 }}>${p.price}</span>
+              </div>
+              <div style={{
+                background: C.greenLight, padding: '6px 14px', borderRadius: 20,
+                fontSize: 12, color: C.green, fontWeight: 500, fontFamily: F.body, whiteSpace: 'nowrap',
+              }}>
+                First visit ${p.firstTime}
+              </div>
             </div>
-          </div>
+          </a>
         ))}
 
         <p style={{ fontSize: 13, color: C.gray, textAlign: 'center', marginTop: 20, fontFamily: F.body }}>
