@@ -130,7 +130,7 @@ function Nav() {
             <img src={window.__resources?.logo || "MelcieLogo.png"}
               alt="Melcie Massage" style={{ height: 40, display: 'block', borderRadius: 4 }} />
           </div>
-          <button onClick={() => setMenuOpen(!menuOpen)} style={{
+          <button onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'} style={{
             background: 'none', border: 'none', cursor: 'pointer', padding: 8,
             fontSize: 24, color: SiteColors.text, lineHeight: 1,
           }}>{menuOpen ? '✕' : '☰'}</button>
@@ -143,10 +143,10 @@ function Nav() {
             overflowY: 'auto',
           }}>
             {links.map(l => (
-              <span key={l.id} onClick={() => scrollTo(l.id)} style={{
-                ...navLinkStyle, fontSize: 18, padding: '12px 0',
+              <a key={l.id} href={`#${l.id}`} onClick={(e) => { e.preventDefault(); scrollTo(l.id); }} style={{
+                ...navLinkStyle, fontSize: 18, padding: '12px 0', textDecoration: 'none',
                 borderBottom: `1px solid ${SiteColors.border}`,
-              }}>{l.label}</span>
+              }}>{l.label}</a>
             ))}
             <a href="https://melciemassage.schedulista.com/" target="_blank" rel="noopener" style={{
               display: 'block', background: SiteColors.green, color: '#fff', padding: '14px',
@@ -172,11 +172,11 @@ function Nav() {
       {/* Left links */}
       <div style={{ display: 'flex', gap: 28, flex: 1 }}>
         {links.slice(0, 3).map(l => (
-          <span key={l.id} onClick={() => scrollTo(l.id)}
-            style={navLinkStyle}
+          <a key={l.id} href={`#${l.id}`} onClick={(e) => { e.preventDefault(); scrollTo(l.id); }}
+            style={{ ...navLinkStyle, textDecoration: 'none' }}
             onMouseEnter={e => e.target.style.color = SiteColors.green}
             onMouseLeave={e => e.target.style.color = SiteColors.gray}
-          >{l.label}</span>
+          >{l.label}</a>
         ))}
       </div>
 
@@ -189,11 +189,11 @@ function Nav() {
       {/* Right links + CTA */}
       <div style={{ display: 'flex', gap: 28, alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
         {links.slice(3).map(l => (
-          <span key={l.id} onClick={() => scrollTo(l.id)}
-            style={navLinkStyle}
+          <a key={l.id} href={`#${l.id}`} onClick={(e) => { e.preventDefault(); scrollTo(l.id); }}
+            style={{ ...navLinkStyle, textDecoration: 'none' }}
             onMouseEnter={e => e.target.style.color = SiteColors.green}
             onMouseLeave={e => e.target.style.color = SiteColors.gray}
-          >{l.label}</span>
+          >{l.label}</a>
         ))}
         <a href="https://melciemassage.schedulista.com/" target="_blank" rel="noopener" style={{
           background: SiteColors.green, color: '#fff', padding: '10px 24px',
@@ -269,11 +269,11 @@ function Footer() {
         <div>
           <h4 style={{ fontFamily: SiteFonts.body, fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.4)',
             letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16 }}>Quick Links</h4>
-          {['About', 'Services', 'Benefits', 'Hours', 'FAQ', 'Contact'].map(item => (
-            <p key={item} style={{
+          {['about', 'services', 'benefits', 'hours', 'faq', 'contact'].map(item => (
+            <a key={item} href={`#${item}`} style={{
               fontFamily: SiteFonts.body, fontSize: 14, color: 'rgba(255,255,255,0.6)',
-              margin: '0 0 10px', cursor: 'pointer',
-            }}>{item}</p>
+              display: 'block', margin: '0 0 10px', textDecoration: 'none',
+            }}>{item.charAt(0).toUpperCase() + item.slice(1)}</a>
           ))}
         </div>
 
@@ -296,9 +296,9 @@ function Footer() {
         justifyContent: 'space-between', alignItems: mobile ? 'flex-start' : 'center',
         fontFamily: SiteFonts.body, fontSize: 12, color: 'rgba(255,255,255,0.3)',
       }}>
-        <span>© 2024 Melcie Massage. All rights reserved.</span>
+        <span>&copy; {new Date().getFullYear()} Melcie Massage. All rights reserved.</span>
         <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <a href="http://www.abmp.com/" target="_blank" rel="noopener"><img src="uploads/abmp-member-logo.png" alt="ABMP Member" style={{ height: 40 }} /></a>
+          <a href="https://www.abmp.com/" target="_blank" rel="noopener"><img src="uploads/abmp-member-logo.png" alt="ABMP Member" style={{ height: 40 }} /></a>
           <span>ABMP Member · LMT since 2007</span>
         </span>
       </div>

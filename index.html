@@ -3,7 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Melcie Massage — Austin, TX</title>
+  <title>Melcie Massage | Corrective & Deep Tissue Massage Therapy in Austin, TX</title>
+  <meta name="description" content="Melcie Massage offers customized corrective massage therapy in Austin, TX. Deep tissue, TMJ, sports massage & more. Licensed since 2007. Book your appointment today.">
+  <link rel="canonical" href="https://www.melcie.com/">
+  <meta name="theme-color" content="#2B6B4D">
+  <meta name="geo.region" content="US-TX">
+  <meta name="geo.placename" content="Austin">
+  <meta name="geo.position" content="30.34524;-97.7124366">
+  <meta name="ICBM" content="30.34524, -97.7124366">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Melcie Massage | Corrective & Deep Tissue Massage Therapy in Austin, TX">
+  <meta property="og:description" content="Customized corrective massage therapy in Austin, TX. Deep tissue, TMJ, sports massage & more. Licensed since 2007.">
+  <meta property="og:url" content="https://www.melcie.com/">
+  <meta property="og:image" content="https://www.melcie.com/MelcieLogo.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Melcie Massage">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Melcie Massage | Corrective Massage Therapy in Austin, TX">
+  <meta name="twitter:description" content="Customized corrective massage therapy in Austin, TX. Book your appointment today.">
+  <meta name="twitter:image" content="https://www.melcie.com/MelcieLogo.png">
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
@@ -14,9 +37,113 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- React + Babel -->
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+  <!-- LocalBusiness Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MassageTherapy",
+    "name": "Melcie Massage",
+    "description": "Customized corrective massage therapy in Austin, TX. Deep tissue, TMJ, sports massage and more.",
+    "url": "https://www.melcie.com",
+    "telephone": "+15127445796",
+    "email": "melciemassage@gmail.com",
+    "image": "https://www.melcie.com/MelcieLogo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "7801 N Lamar Blvd Suite D73",
+      "addressLocality": "Austin",
+      "addressRegion": "TX",
+      "postalCode": "78752",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 30.34524,
+      "longitude": -97.7124366
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "description": "By appointment only"
+    },
+    "priceRange": "$70-$140",
+    "paymentAccepted": "Cash, Check, Credit Card",
+    "sameAs": [
+      "https://www.google.com/maps/place/Melcie+Massage/@30.34524,-97.7124366"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Gricelda Padron",
+      "jobTitle": "Licensed Massage Therapist"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Austin",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Texas"
+      }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Massage Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "60 Minute Customized Massage" },
+          "price": "80.00",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "90 Minute Customized Massage" },
+          "price": "110.00",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "120 Minute Customized Massage" },
+          "price": "140.00",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where will my massage session take place?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Your massage or bodywork session will take place in a warm, comfortable, quiet room. Soft music may be played to help you relax. You will lie on a table especially designed for your comfort." }
+      },
+      {
+        "@type": "Question",
+        "name": "Must I be completely undressed?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Most massage and bodywork techniques are traditionally performed with the client unclothed; however, it is entirely up to you what you want to wear. You should undress to your level of comfort. You will be properly draped during the entire session." }
+      },
+      {
+        "@type": "Question",
+        "name": "What will the massage feel like?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A relaxing Swedish massage is often a baseline for clients. Your session may start with broad, flowing strokes that will help calm your nervous system and relax exterior muscle tension. As your body becomes relaxed, pressure will gradually be increased to relax specific areas and relieve areas of muscular tension." }
+      },
+      {
+        "@type": "Question",
+        "name": "Are there any medical conditions that would make massage inadvisable?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. It is very important that you inform the practitioner of any health problems or medications you are taking. If you are under a doctor's care, it is strongly advised that you receive a written recommendation for massage prior to any session." }
+      }
+    ]
+  }
+  </script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,6 +163,14 @@
 </head>
 <body>
   <div id="root"></div>
+
+  <!-- SEO fallback for crawlers that don't execute JavaScript -->
+  <noscript>
+    <h1>Melcie Massage — Corrective Massage Therapy in Austin, TX</h1>
+    <p>Customized deep tissue, TMJ, and corrective massage therapy. Located inside Adagio Spa, 7801 N Lamar Blvd Suite D73, Austin, TX 78752.</p>
+    <p>Phone: (512) 744-5796 | Email: melciemassage@gmail.com</p>
+    <p><a href="https://melciemassage.schedulista.com/">Book an Appointment</a></p>
+  </noscript>
 
   <script type="text/babel" src="site-components.jsx"></script>
   <script type="text/babel" src="site-content.jsx"></script>

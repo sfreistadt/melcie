@@ -9,10 +9,13 @@ function HeroSection() {
   return (
     <section style={{ padding: `${mobile ? 60 : 48}px ${px}px ${mobile ? 48 : 48}px`, textAlign: 'center', background: C.white }}>
       <img src={window.__resources?.logo || "MelcieLogo.png"}
-        alt="Melcie Massage" style={{ height: mobile ? 216 : 200, borderRadius: 6, marginBottom: mobile ? 28 : 24 }} />
-      <h1 style={{ ...heading, fontSize: mobile ? 32 : 56, fontWeight: 400, lineHeight: 1.15, margin: '0 auto 24px', maxWidth: 800, textWrap: 'balance' }}>
-        Revitalize &amp; Become Whole
+        alt="Melcie Massage - Corrective Massage Therapy in Austin TX" style={{ height: mobile ? 216 : 200, borderRadius: 6, marginBottom: mobile ? 28 : 24 }} />
+      <h1 style={{ ...heading, fontSize: mobile ? 28 : 44, fontWeight: 400, lineHeight: 1.15, margin: '0 auto 16px', maxWidth: 800, textWrap: 'balance' }}>
+        Corrective Massage Therapy in Austin, TX
       </h1>
+      <p style={{ fontFamily: F.heading, fontSize: mobile ? 20 : 26, fontStyle: 'italic', color: C.textLight, margin: '0 auto 24px' }}>
+        Revitalize &amp; Become Whole
+      </p>
       <p style={{ fontSize: mobile ? 15 : 17, lineHeight: 1.8, color: C.textLight, maxWidth: 620, margin: '0 auto 12px' }}>
         Here, at Melcie Massage, we believe in giving you the best work to help you achieve a pain-free life. We listen to you to create a customized session that caters to you and your body's needs.
       </p>
@@ -42,7 +45,7 @@ function AboutSection() {
   return (
     <section id="about" style={{ padding: `${mobile ? 48 : 80}px ${px}px`, background: C.light, scrollMarginTop: 80 }}>
       <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr 1fr', gap: mobile ? 32 : 64, alignItems: 'start' }}>
-        <img src="uploads/gracie-photo.jpg" alt="Gracie performing massage therapy"
+        <img src="uploads/gracie-photo.jpg" alt="Gracie Padron, licensed massage therapist in Austin TX, performing corrective massage therapy"
           style={{ width: '100%', height: mobile ? 300 : 580, objectFit: 'cover', borderRadius: 8 }} />
         <div>
           <SectionLabel>About the Practitioner</SectionLabel>
@@ -50,20 +53,20 @@ function AboutSection() {
             Gricelda "Gracie" Padron
           </h2>
 
-          <h4 style={{ fontFamily: F.body, fontSize: 14, fontWeight: 500, color: C.green, margin: '0 0 10px',
-            letterSpacing: '0.06em', textTransform: 'uppercase' }}>Education Background</h4>
+          <h3 style={{ fontFamily: F.body, fontSize: 14, fontWeight: 500, color: C.green, margin: '0 0 10px',
+            letterSpacing: '0.06em', textTransform: 'uppercase' }}>Education Background</h3>
           <p style={{ fontSize: 15, lineHeight: 1.85, color: C.textLight, marginBottom: 24 }}>
             I attended Austin Schools of Massage and received my massage license in 2007. In the 10+ years as a massage therapist, I endlessly take educational classes in modalities and techniques (i.e. Deep Tissue, TMJ disorder, Thai Foot Massage, Soft Tissue Manipulation, and much more) to ensure I have the knowledge and skills necessary to achieve the relief my clients seek. I am your Corrective specialist!
           </p>
 
-          <h4 style={{ fontFamily: F.body, fontSize: 14, fontWeight: 500, color: C.green, margin: '0 0 10px',
-            letterSpacing: '0.06em', textTransform: 'uppercase' }}>Why I Do What I Do</h4>
+          <h3 style={{ fontFamily: F.body, fontSize: 14, fontWeight: 500, color: C.green, margin: '0 0 10px',
+            letterSpacing: '0.06em', textTransform: 'uppercase' }}>Why I Do What I Do</h3>
           <p style={{ fontSize: 15, lineHeight: 1.85, color: C.textLight, marginBottom: 24 }}>
             I LOVE MY CAREER! I get to help clients find their path to feeling more balanced and revitalized every single time. Through my work, I aim to yield a Mental escape, for a moment of Tranquility, to alleviating any Acute to Chronic Pain. I put myself in your shoes to ensure I give your body the detail work it wants!
           </p>
 
-          <h4 style={{ fontFamily: F.body, fontSize: 14, fontWeight: 500, color: C.green, margin: '0 0 10px',
-            letterSpacing: '0.06em', textTransform: 'uppercase' }}>My Hobbies</h4>
+          <h3 style={{ fontFamily: F.body, fontSize: 14, fontWeight: 500, color: C.green, margin: '0 0 10px',
+            letterSpacing: '0.06em', textTransform: 'uppercase' }}>My Hobbies</h3>
           <p style={{ fontSize: 15, lineHeight: 1.85, color: C.textLight, marginBottom: 0 }}>
             I am a dancer, explorer, athlete, runner — heck, I would do it all! I know what it is like to have sore muscles and sudden aches that come out of nowhere. Hence, that has taught me to listen to my body better to not cause or further an injury. I do so much because I believe that by being active and listening to my body, I can take care of others.
           </p>
@@ -239,6 +242,7 @@ function TestimonialsSection() {
   return (
     <section style={{ padding: `${mobile ? 48 : 80}px ${mobile ? 20 : 56}px`, background: C.green, textAlign: 'center' }}>
       <SectionLabel><span style={{ color: 'rgba(255,255,255,0.5)' }}>What Clients Say</span></SectionLabel>
+      <h2 style={{ fontFamily: F.heading, fontSize: mobile ? 28 : 36, fontWeight: 400, color: '#fff', margin: '0 0 24px' }}>Client Testimonials</h2>
       <div style={{ maxWidth: 640, margin: '0 auto', minHeight: mobile ? 200 : 160, position: 'relative' }}>
         {testimonials.map((t, i) => (
           <div key={i} style={{
@@ -445,7 +449,7 @@ function VideosSection() {
               <iframe src={`https://www.youtube.com/embed/${v.id}`} title={v.title}
                 style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen></iframe>
+                allowFullScreen loading="lazy"></iframe>
             </div>
             <p style={{ fontFamily: F.body, fontSize: 14, color: C.text, marginTop: 12, fontWeight: 500 }}>{v.title}</p>
           </div>
