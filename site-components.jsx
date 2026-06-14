@@ -303,4 +303,20 @@ function Footer() {
   );
 }
 
-Object.assign(window, { SiteColors, SiteFonts, Placeholder, SectionLabel, Nav, Footer, FAQItem, useIsMobile, getEmail, getPhone, EmailLink, PhoneLink });
+/* ─── Book Now CTA button ─── */
+function BookNowButton() {
+  return (
+    <div style={{ textAlign: 'center', marginTop: 36 }}>
+      <a href="https://melciemassage.schedulista.com/" target="_blank" rel="noopener" style={{
+        display: 'inline-block', background: SiteColors.green, color: '#fff', padding: '14px 36px',
+        borderRadius: 4, fontSize: 15, fontWeight: 500, cursor: 'pointer', textDecoration: 'none',
+        fontFamily: SiteFonts.body, transition: 'background 0.2s',
+      }}
+        onMouseEnter={e => e.target.style.background = SiteColors.greenDark}
+        onMouseLeave={e => e.target.style.background = SiteColors.green}
+      >Book Now</a>
+    </div>
+  );
+}
+
+Object.assign(window, { SiteColors, SiteFonts, Placeholder, SectionLabel, Nav, Footer, FAQItem, useIsMobile, getEmail, getPhone, EmailLink, PhoneLink, BookNowButton });

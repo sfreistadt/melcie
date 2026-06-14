@@ -69,6 +69,7 @@ function AboutSection() {
           </p>
         </div>
       </div>
+      <BookNowButton />
     </section>
   );
 }
@@ -211,6 +212,7 @@ function BenefitsSection() {
           ))}
         </div>
       </div>
+      <BookNowButton />
     </section>
   );
 }
@@ -370,6 +372,7 @@ function OutcallSection() {
         <p style={{ fontSize: 14, lineHeight: 1.8, color: C.textLight, marginTop: 24, textAlign: 'center' }}>
           To make an outcall appointment, please call or text <strong>{getPhone()}</strong>. Thank you for being my client! I value your trust and loyalty.
         </p>
+        <BookNowButton />
       </div>
     </section>
   );
@@ -402,6 +405,7 @@ function FAQSection() {
           <h2 style={{ ...heading, fontSize: mobile ? 28 : 36, fontWeight: 400, margin: 0 }}>Frequently Asked Questions</h2>
         </div>
         {faqs.map((f, i) => <FAQItem key={i} q={f.q} a={f.a} />)}
+        <BookNowButton />
       </div>
     </section>
   );
@@ -438,6 +442,7 @@ function VideosSection() {
           </div>
         ))}
       </div>
+      <BookNowButton />
     </section>
   );
 }
@@ -472,6 +477,7 @@ function ContactSection() {
             allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
             title="Melcie Massage location — Adagio Spa, Austin TX"></iframe>
         </div>
+        <BookNowButton />
       </div>
     </section>
   );
