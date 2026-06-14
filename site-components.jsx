@@ -13,6 +13,12 @@ function useIsMobile(breakpoint = 768) {
   return isMobile;
 }
 
+/* ─── Obfuscated contact info (anti-scrape) ─── */
+const _c = [109,101,108,99,105,101,109,97,115,115,97,103,101,64,103,109,97,105,108,46,99,111,109];
+const _p = [40,53,49,50,41,32,55,52,52,45,53,55,57,54];
+function getEmail() { return _c.map(c => String.fromCharCode(c)).join(''); }
+function getPhone() { return _p.map(c => String.fromCharCode(c)).join(''); }
+
 const SiteColors = {
   green: '#2B6B4D',
   greenDark: '#1F5038',
@@ -271,8 +277,8 @@ function Footer() {
             Inside Adagio Spa<br/>
             7801 N Lamar Blvd Suite D73<br/>
             Austin, TX 78752<br/><br/>
-            (512) 744-5796<br/>
-            melciemassage@gmail.com
+            {getPhone()}<br/>
+            {getEmail()}
           </p>
         </div>
       </div>
@@ -289,4 +295,4 @@ function Footer() {
   );
 }
 
-Object.assign(window, { SiteColors, SiteFonts, Placeholder, SectionLabel, Nav, Footer, FAQItem, useIsMobile });
+Object.assign(window, { SiteColors, SiteFonts, Placeholder, SectionLabel, Nav, Footer, FAQItem, useIsMobile, getEmail, getPhone });
