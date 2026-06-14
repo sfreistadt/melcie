@@ -261,6 +261,13 @@ function TestimonialsSection() {
           }}></div>
         ))}
       </div>
+      <a href="https://www.google.com/maps/place/Melcie+Massage/@30.34524,-97.7124366/reviews" target="_blank" rel="noopener" style={{
+        display: 'inline-block', marginTop: 24, fontSize: 14, fontFamily: F.body,
+        color: 'rgba(255,255,255,0.7)', textDecoration: 'underline', transition: 'color 0.2s',
+      }}
+        onMouseEnter={e => e.target.style.color = '#fff'}
+        onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.7)'}
+      >See all reviews on Google</a>
     </section>
   );
 }
