@@ -303,8 +303,8 @@ function HoursSection() {
               onMouseLeave={e => e.target.style.background = C.green}
             >Schedule Online</a>
             <div style={{ fontSize: 14, color: C.textLight, fontFamily: F.body, lineHeight: 1.8 }}>
-              <p style={{ margin: '0 0 8px' }}><strong>Call/Text:</strong> {getPhone()}</p>
-              <p style={{ margin: 0 }}><strong>Email:</strong> {getEmail()}</p>
+              <p style={{ margin: '0 0 8px' }}><strong>Call/Text:</strong> <PhoneLink /></p>
+              <p style={{ margin: 0 }}><strong>Email:</strong> <EmailLink /></p>
             </div>
           </div>
         </div>
@@ -461,8 +461,8 @@ function ContactSection() {
           <p style={{ margin: '0 0 4px', fontWeight: 500, color: C.text }}>Located Inside Adagio Spa</p>
           <p style={{ margin: 0 }}>7801 N Lamar Blvd Suite D73</p>
           <p style={{ margin: '0 0 16px' }}>Austin, TX 78752</p>
-          <p style={{ margin: 0 }}><strong>Phone:</strong> {getPhone()}</p>
-          <p style={{ margin: '0 0 16px' }}><strong>Email:</strong> {getEmail()}</p>
+          <p style={{ margin: 0 }}><strong>Phone:</strong> <PhoneLink /></p>
+          <p style={{ margin: '0 0 16px' }}><strong>Email:</strong> <EmailLink /></p>
           <p style={{ margin: 0, color: C.green, fontWeight: 500 }}>Now Available for Outcalls</p>
         </div>
         <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: 8, overflow: 'hidden' }}>

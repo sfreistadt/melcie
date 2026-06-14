@@ -18,6 +18,14 @@ const _c = [109,101,108,99,105,101,109,97,115,115,97,103,101,64,103,109,97,105,1
 const _p = [40,53,49,50,41,32,55,52,52,45,53,55,57,54];
 function getEmail() { return _c.map(c => String.fromCharCode(c)).join(''); }
 function getPhone() { return _p.map(c => String.fromCharCode(c)).join(''); }
+function EmailLink({ style }) {
+  const email = getEmail();
+  return <a href={'mailto:' + email} style={{ textDecoration: 'none', color: 'inherit', ...style }}>{email}</a>;
+}
+function PhoneLink({ style }) {
+  const phone = getPhone();
+  return <a href={'tel:+1' + phone.replace(/\D/g, '')} style={{ textDecoration: 'none', color: 'inherit', ...style }}>{phone}</a>;
+}
 
 const SiteColors = {
   green: '#2B6B4D',
@@ -277,8 +285,8 @@ function Footer() {
             Inside Adagio Spa<br/>
             7801 N Lamar Blvd Suite D73<br/>
             Austin, TX 78752<br/><br/>
-            {getPhone()}<br/>
-            {getEmail()}
+            <PhoneLink style={{ color: 'rgba(255,255,255,0.6)' }} /><br/>
+            <EmailLink style={{ color: 'rgba(255,255,255,0.6)' }} />
           </p>
         </div>
       </div>
@@ -295,4 +303,4 @@ function Footer() {
   );
 }
 
-Object.assign(window, { SiteColors, SiteFonts, Placeholder, SectionLabel, Nav, Footer, FAQItem, useIsMobile, getEmail, getPhone });
+Object.assign(window, { SiteColors, SiteFonts, Placeholder, SectionLabel, Nav, Footer, FAQItem, useIsMobile, getEmail, getPhone, EmailLink, PhoneLink });
