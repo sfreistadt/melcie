@@ -227,9 +227,12 @@ function TestimonialsSection() {
   const C = SiteColors, F = SiteFonts;
   const mobile = useIsMobile();
   const testimonials = [
-    { text: "Absolutely highly recommend Gracie, extremely gifted massage therapist with an outstanding knowledge of the human body, always takes care of me fixing me every single time I get a session with her… simply the best therapist I've ever had!", author: 'Carles Z.' },
-    { text: "Gracie isn't just a masseuse — she's a true healer. She goes above and beyond, not only providing excellent massages but also showing genuine care for her clients.", author: 'Client Review' },
-    { text: "Gracie is a healer. Without even saying where my issue is, she can find it and take care of it. Making her a regular part of my fitness regime has made all the difference in my life!", author: 'Client Review' },
+    { text: "Gracie is a miracle worker. Can't say enough about her and the magical therapy she provides. Her caring personality and amazing knowledge of the body has helped my posture, spirit, and soul.", author: 'Steve F.' },
+    { text: "Not only are her prices reasonable but she's knowledgeable and caters to your needs. I express I get ticklish and she explained why and provided a safe environment for my body to relax. It was the best massage I've ever had. Will definitely go back. I definitely recommend!!", author: 'Rebecca P.' },
+    { text: "Gracie isn't just a masseuse, she's a true healer. Her work speaks volumes, and once you experience a massage from her, you'll understand why. Gracie goes above and beyond, not only providing excellent massages but also showing genuine care for her clients. She offers daily stretches and personalized advice to help alleviate any pain you might be experiencing.", author: 'Cassie V.' },
+    { text: "I've been lucky to have Gracie help my body stay flexible and centered for nearly three years. She is a consummate professional with a deep understanding of both body and mind. Gracie has helped me get through knee replacement and ankle fusion surgeries. Her skill-set and thoughtfulness made a huge difference in getting me back to functionality. I cannot recommend Gracie enough!", author: 'Steven J.' },
+    { text: "I have been seeing Gracie for massage therapy for over 6 years. She is an incredible therapist and a wonderful person. Her commitment and compassion for her clients shines through in every aspect of her work. I highly recommend Gracie for all your massage therapy needs.", author: 'Kathy W.' },
+    { text: "I have been working with Gracie for several years and she is one of the best massage therapists I have worked with in my life. She is gifted and works with my body to give me exactly what I need on each visit. She addresses all issues with professionalism and care. I highly recommend Gracie to anyone who needs a healing touch.", author: 'Shelly L.' },
   ];
 
   const [active, setActive] = React.useState(0);
