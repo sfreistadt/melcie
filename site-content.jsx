@@ -8,7 +8,7 @@ function HeroSection() {
   const px = mobile ? 20 : 56;
   return (
     <section style={{ padding: `${mobile ? 60 : 100}px ${px}px ${mobile ? 48 : 80}px`, textAlign: 'center', background: C.white }}>
-      <img src={window.__resources?.logo || "uploads/Gemini_Generated_Image_lz6fo9lz6fo9lz6f.png"}
+      <img src={window.__resources?.logo || "MelcieLogo.png"}
         alt="Melcie Massage" style={{ height: mobile ? 72 : 100, borderRadius: 6, marginBottom: mobile ? 28 : 40 }} />
       <h1 style={{ ...heading, fontSize: mobile ? 32 : 56, fontWeight: 400, lineHeight: 1.15, margin: '0 auto 24px', maxWidth: 800, textWrap: 'balance' }}>
         Revitalize &amp; Become Whole

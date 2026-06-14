@@ -113,7 +113,7 @@ function Nav() {
           transition: 'box-shadow 0.3s',
         }}>
           <div style={{ cursor: 'pointer' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src={window.__resources?.logo || "uploads/Gemini_Generated_Image_lz6fo9lz6fo9lz6f.png"}
+            <img src={window.__resources?.logo || "MelcieLogo.png"}
               alt="Melcie Massage" style={{ height: 36, display: 'block', borderRadius: 4 }} />
           </div>
           <button onClick={() => setMenuOpen(!menuOpen)} style={{
@@ -168,7 +168,7 @@ function Nav() {
 
       {/* Center logo */}
       <div style={{ cursor: 'pointer' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        <img src={window.__resources?.logo || "uploads/Gemini_Generated_Image_lz6fo9lz6fo9lz6f.png"}
+        <img src={window.__resources?.logo || "MelcieLogo.png"}
           alt="Melcie Massage" style={{ height: 44, display: 'block', borderRadius: 4 }} />
       </div>
 
@@ -244,7 +244,7 @@ function Footer() {
       }}>
         {/* Logo + tagline */}
         <div>
-          <img src={window.__resources?.logo || "uploads/Gemini_Generated_Image_lz6fo9lz6fo9lz6f.png"}
+          <img src={window.__resources?.logo || "MelcieLogo.png"}
             alt="Melcie Massage" style={{ height: 56, borderRadius: 4, marginBottom: 16, display: 'block' }} />
           <p style={{ fontFamily: SiteFonts.body, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>
             Revitalize &amp; Become Whole
