@@ -475,7 +475,7 @@ function ContactSection() {
           </div>
           <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: 8, overflow: 'hidden' }}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.5!2d-97.72650!3d30.35300!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644cb8a53f0c0e1%3A0x5c5ea2e5b7f8a5c5!2sAdagio%20Spa!5e0!3m2!1sen!2sus!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d862.0!2d-97.7124366!3d30.34524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644ca41f8648ac5%3A0xb09d998a6bf21a3e!2sMelcie%20Massage!5e0!3m2!1sen!2sus!4v1"
               style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
               allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
               title="Melcie Massage location — Adagio Spa, Austin TX"></iframe>
