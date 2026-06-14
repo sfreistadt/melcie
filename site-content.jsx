@@ -448,95 +448,29 @@ function ContactSection() {
   const mobile = useIsMobile();
   const heading = { fontFamily: F.heading, color: C.text };
 
-  const [formData, setFormData] = React.useState({ subject: '', firstName: '', lastName: '', comment: '', phone: '', email: '' });
-  const update = (field, value) => setFormData(prev => ({ ...prev, [field]: value }));
-
-  const inputStyle = {
-    width: '100%', padding: '12px 16px', border: `1px solid ${C.border}`,
-    borderRadius: 4, fontSize: 14, fontFamily: F.body, background: C.bg,
-    outline: 'none', transition: 'border-color 0.2s',
-  };
-
   return (
     <section id="contact" style={{ padding: `${mobile ? 48 : 80}px ${mobile ? 20 : 56}px`, scrollMarginTop: 80 }}>
-      <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr 1fr', gap: mobile ? 40 : 64 }}>
-        {/* Contact info */}
-        <div>
+      <div style={{ maxWidth: 640, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center' }}>
           <SectionLabel>Get in Touch</SectionLabel>
           <h2 style={{ ...heading, fontSize: mobile ? 28 : 36, fontWeight: 400, margin: '0 0 24px', lineHeight: 1.35 }}>
             Contact Information
           </h2>
-          <div style={{ fontSize: 15, lineHeight: 2, color: C.textLight, fontFamily: F.body, marginBottom: 24 }}>
-            <p style={{ margin: '0 0 4px', fontWeight: 500, color: C.text }}>Located Inside Adagio Spa</p>
-            <p style={{ margin: 0 }}>7801 N Lamar Blvd Suite D73</p>
-            <p style={{ margin: '0 0 16px' }}>Austin, TX 78752</p>
-            <p style={{ margin: 0 }}><strong>Phone:</strong> {getPhone()}</p>
-            <p style={{ margin: '0 0 16px' }}><strong>Email:</strong> {getEmail()}</p>
-            <p style={{ margin: 0, color: C.green, fontWeight: 500 }}>Now Available for Outcalls</p>
-          </div>
-          <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: 8, overflow: 'hidden' }}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d862.0!2d-97.7124366!3d30.34524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644ca41f8648ac5%3A0xb09d998a6bf21a3e!2sMelcie%20Massage!5e0!3m2!1sen!2sus!4v1"
-              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
-              allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-              title="Melcie Massage location — Adagio Spa, Austin TX"></iframe>
-          </div>
         </div>
-
-        {/* Contact form */}
-        <div>
-          <h3 style={{ ...heading, fontSize: 24, fontWeight: 400, margin: '0 0 24px' }}>Send a Message</h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            <div>
-              <label style={{ fontFamily: F.body, fontSize: 13, color: C.gray, display: 'block', marginBottom: 6 }}>Subject *</label>
-              <select value={formData.subject} onChange={e => update('subject', e.target.value)} style={{ ...inputStyle, cursor: 'pointer' }}>
-                <option value="">— Select —</option>
-                <option>Appointment Inquiry</option>
-                <option>Question / More Information</option>
-                <option>Submit a Testimonial</option>
-                <option>Join Mailing List</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr 1fr', gap: 16 }}>
-              <div>
-                <label style={{ fontFamily: F.body, fontSize: 13, color: C.gray, display: 'block', marginBottom: 6 }}>First Name *</label>
-                <input value={formData.firstName} onChange={e => update('firstName', e.target.value)} style={inputStyle}
-                  onFocus={e => e.target.style.borderColor = C.green} onBlur={e => e.target.style.borderColor = C.border} />
-              </div>
-              <div>
-                <label style={{ fontFamily: F.body, fontSize: 13, color: C.gray, display: 'block', marginBottom: 6 }}>Last Name *</label>
-                <input value={formData.lastName} onChange={e => update('lastName', e.target.value)} style={inputStyle}
-                  onFocus={e => e.target.style.borderColor = C.green} onBlur={e => e.target.style.borderColor = C.border} />
-              </div>
-            </div>
-            <div>
-              <label style={{ fontFamily: F.body, fontSize: 13, color: C.gray, display: 'block', marginBottom: 6 }}>Message *</label>
-              <textarea value={formData.comment} onChange={e => update('comment', e.target.value)} rows={4}
-                style={{ ...inputStyle, resize: 'vertical' }}
-                onFocus={e => e.target.style.borderColor = C.green} onBlur={e => e.target.style.borderColor = C.border}></textarea>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr 1fr', gap: 16 }}>
-              <div>
-                <label style={{ fontFamily: F.body, fontSize: 13, color: C.gray, display: 'block', marginBottom: 6 }}>Phone</label>
-                <input value={formData.phone} onChange={e => update('phone', e.target.value)} style={inputStyle}
-                  onFocus={e => e.target.style.borderColor = C.green} onBlur={e => e.target.style.borderColor = C.border} />
-              </div>
-              <div>
-                <label style={{ fontFamily: F.body, fontSize: 13, color: C.gray, display: 'block', marginBottom: 6 }}>Email</label>
-                <input value={formData.email} onChange={e => update('email', e.target.value)} style={inputStyle}
-                  onFocus={e => e.target.style.borderColor = C.green} onBlur={e => e.target.style.borderColor = C.border} />
-              </div>
-            </div>
-            <button style={{
-              background: C.green, color: '#fff', padding: '14px 36px',
-              borderRadius: 4, fontSize: 15, fontWeight: 500, cursor: 'pointer',
-              fontFamily: F.body, border: 'none', transition: 'background 0.2s', alignSelf: 'flex-start',
-            }}
-              onMouseEnter={e => e.target.style.background = C.greenDark}
-              onMouseLeave={e => e.target.style.background = C.green}
-            >Send Message</button>
-          </div>
+        <div style={{ fontSize: 15, lineHeight: 2, color: C.textLight, fontFamily: F.body, marginBottom: 24, textAlign: 'center' }}>
+          <p style={{ margin: '0 0 4px', fontWeight: 500, color: C.text }}>Located Inside Adagio Spa</p>
+          <p style={{ margin: 0 }}>7801 N Lamar Blvd Suite D73</p>
+          <p style={{ margin: '0 0 16px' }}>Austin, TX 78752</p>
+          <p style={{ margin: 0 }}><strong>Phone:</strong> {getPhone()}</p>
+          <p style={{ margin: '0 0 16px' }}><strong>Email:</strong> {getEmail()}</p>
+          <p style={{ margin: 0, color: C.green, fontWeight: 500 }}>Now Available for Outcalls</p>
+        </div>
+        <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: 8, overflow: 'hidden' }}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d862.0!2d-97.7124366!3d30.34524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644ca41f8648ac5%3A0xb09d998a6bf21a3e!2sMelcie%20Massage!5e0!3m2!1sen!2sus!4v1"
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+            allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+            title="Melcie Massage location — Adagio Spa, Austin TX"></iframe>
         </div>
       </div>
     </section>
