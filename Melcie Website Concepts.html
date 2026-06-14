@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melcie Massage — Website Concepts</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&family=Karla:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- React + Babel -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body, #root { width: 100%; height: 100%; overflow: hidden; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Components -->
+  <script type="text/babel" src="design-canvas.jsx"></script>
+  <script type="text/babel" src="direction-a.jsx"></script>
+  <script type="text/babel" src="direction-b.jsx"></script>
+  <script type="text/babel" src="direction-c.jsx"></script>
+
+  <script type="text/babel">
+    /*
+     * MELCIE MASSAGE — Website Concept Exploration
+     *
+     * Context & assumptions:
+     * - Client: Gracie Padron, LMT, owner of Melcie Massage in Austin TX
+     * - Current site: melciemassage.massagetherapy.com — functional but dated
+     * - Content to preserve: all existing pages (About, Services, Benefits, Outcall, Hours, Contact, FAQ, Reviews, Videos)
+     * - Brand: Healing hand logo in teal circle, tagline "Revitalize & Become Whole"
+     * - Inspiration: Gregory Colbert's Ashes and Snow (sepia, umber, ethereal), Milk + Honey Spa (clean modern), Knead Massage ATX (simple)
+     *
+     * These 3 directions explore different visual approaches while keeping the same content structure.
+     * Image placeholders show where real photography would go.
+     */
+
+    const { DesignCanvas, DCSection, DCArtboard, DCPostIt } = window;
+
+    function App() {
+      return (
+        <DesignCanvas>
+          <DCSection id="context" title="Melcie Massage — Website Redesign" subtitle="3 concept directions for Gracie's review. All preserve the existing content structure; imagery is placeholder. Click any artboard to view fullscreen.">
+
+            <DCArtboard id="a" label='A · "Warm Earth"' width={1440}>
+              <DirectionA />
+            </DCArtboard>
+
+            <DCArtboard id="b" label='B · "Modern Minimal"' width={1440}>
+              <DirectionB />
+            </DCArtboard>
+
+            <DCArtboard id="c" label='C · "Dark Luxe"' width={1440}>
+              <DirectionC />
+            </DCArtboard>
+
+          </DCSection>
+        </DesignCanvas>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
