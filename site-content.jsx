@@ -3,18 +3,20 @@
 /* ─── HERO ─── */
 function HeroSection() {
   const C = SiteColors, F = SiteFonts;
+  const mobile = useIsMobile();
   const heading = { fontFamily: F.heading, color: C.text };
+  const px = mobile ? 20 : 56;
   return (
-    <section style={{ padding: '100px 56px 80px', textAlign: 'center', background: C.white }}>
+    <section style={{ padding: `${mobile ? 60 : 100}px ${px}px ${mobile ? 48 : 80}px`, textAlign: 'center', background: C.white }}>
       <img src={window.__resources?.logo || "uploads/Gemini_Generated_Image_lz6fo9lz6fo9lz6f.png"}
-        alt="Melcie Massage" style={{ height: 100, borderRadius: 6, marginBottom: 40 }} />
-      <h1 style={{ ...heading, fontSize: 56, fontWeight: 400, lineHeight: 1.15, margin: '0 auto 24px', maxWidth: 800, textWrap: 'balance' }}>
+        alt="Melcie Massage" style={{ height: mobile ? 72 : 100, borderRadius: 6, marginBottom: mobile ? 28 : 40 }} />
+      <h1 style={{ ...heading, fontSize: mobile ? 32 : 56, fontWeight: 400, lineHeight: 1.15, margin: '0 auto 24px', maxWidth: 800, textWrap: 'balance' }}>
         Revitalize &amp; Become Whole
       </h1>
-      <p style={{ fontSize: 17, lineHeight: 1.8, color: C.textLight, maxWidth: 620, margin: '0 auto 12px' }}>
+      <p style={{ fontSize: mobile ? 15 : 17, lineHeight: 1.8, color: C.textLight, maxWidth: 620, margin: '0 auto 12px' }}>
         Here, at Melcie Massage, we believe in giving you the best work to help you achieve a pain-free life. We listen to you to create a customized session that caters to you and your body's needs.
       </p>
-      <p style={{ fontSize: 17, lineHeight: 1.8, color: C.text, maxWidth: 620, margin: '0 auto 36px', fontWeight: 500 }}>
+      <p style={{ fontSize: mobile ? 15 : 17, lineHeight: 1.8, color: C.text, maxWidth: 620, margin: '0 auto 36px', fontWeight: 500 }}>
         Walk out feeling Taller, Straighter, &amp; Better!
       </p>
       <div style={{ display: 'flex', gap: 16, justifyContent: 'center' }}>
@@ -34,14 +36,16 @@ function HeroSection() {
 /* ─── ABOUT ─── */
 function AboutSection() {
   const C = SiteColors, F = SiteFonts;
+  const mobile = useIsMobile();
   const heading = { fontFamily: F.heading, color: C.text };
+  const px = mobile ? 20 : 56;
   return (
-    <section id="about" style={{ padding: '80px 56px', background: C.light, scrollMarginTop: 80 }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }}>
-        <Placeholder label="portrait of Gracie — warm, approachable" h={580} />
+    <section id="about" style={{ padding: `${mobile ? 48 : 80}px ${px}px`, background: C.light, scrollMarginTop: 80 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr 1fr', gap: mobile ? 32 : 64, alignItems: 'start' }}>
+        <Placeholder label="portrait of Gracie — warm, approachable" h={mobile ? 300 : 580} />
         <div>
           <SectionLabel>About the Practitioner</SectionLabel>
-          <h2 style={{ ...heading, fontSize: 36, fontWeight: 400, margin: '0 0 24px', lineHeight: 1.35 }}>
+          <h2 style={{ ...heading, fontSize: mobile ? 28 : 36, fontWeight: 400, margin: '0 0 24px', lineHeight: 1.35 }}>
             Gricelda "Gracie" Padron
           </h2>
 
@@ -71,6 +75,7 @@ function AboutSection() {
 /* ─── SERVICES & RATES ─── */
 function ServicesSection() {
   const C = SiteColors, F = SiteFonts;
+  const mobile = useIsMobile();
   const heading = { fontFamily: F.heading, color: C.text };
 
   const pricing = [
@@ -80,10 +85,10 @@ function ServicesSection() {
   ];
 
   return (
-    <section id="services" style={{ padding: '80px 56px', scrollMarginTop: 80 }}>
+    <section id="services" style={{ padding: `${mobile ? 48 : 80}px ${mobile ? 20 : 56}px`, scrollMarginTop: 80 }}>
       <div style={{ textAlign: 'center', marginBottom: 16 }}>
         <SectionLabel>What We Offer</SectionLabel>
-        <h2 style={{ ...heading, fontSize: 36, fontWeight: 400, margin: '0 0 12px' }}>Services &amp; Rates</h2>
+        <h2 style={{ ...heading, fontSize: mobile ? 28 : 36, fontWeight: 400, margin: '0 0 12px' }}>Services &amp; Rates</h2>
         <p style={{ fontSize: 16, color: C.textLight, fontFamily: F.body, fontStyle: 'italic', margin: '0 0 48px' }}>
           Investing in massage is an investment in your health.
         </p>
@@ -96,8 +101,8 @@ function ServicesSection() {
 
         {pricing.map((p, i) => (
           <div key={i} style={{
-            display: 'grid', gridTemplateColumns: '1fr auto auto', gap: 24,
-            alignItems: 'center', padding: '24px 32px',
+            display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr auto auto', gap: mobile ? 12 : 24,
+            alignItems: mobile ? 'flex-start' : 'center', padding: mobile ? '20px' : '24px 32px',
             background: C.white, border: `1px solid ${C.border}`, borderRadius: 8,
             marginBottom: 12, transition: 'border-color 0.2s',
           }}
@@ -142,6 +147,7 @@ function ServicesSection() {
 /* ─── BENEFITS ─── */
 function BenefitsSection() {
   const C = SiteColors, F = SiteFonts;
+  const mobile = useIsMobile();
   const heading = { fontFamily: F.heading, color: C.text };
 
   const stressBenefits = [
@@ -168,17 +174,17 @@ function BenefitsSection() {
   ];
 
   return (
-    <section id="benefits" style={{ padding: '80px 56px', background: C.light, scrollMarginTop: 80 }}>
-      <div style={{ textAlign: 'center', marginBottom: 48 }}>
+    <section id="benefits" style={{ padding: `${mobile ? 48 : 80}px ${mobile ? 20 : 56}px`, background: C.light, scrollMarginTop: 80 }}>
+      <div style={{ textAlign: 'center', marginBottom: mobile ? 32 : 48 }}>
         <SectionLabel>Why Massage</SectionLabel>
-        <h2 style={{ ...heading, fontSize: 36, fontWeight: 400, margin: '0 0 16px' }}>Benefits of Massage</h2>
+        <h2 style={{ ...heading, fontSize: mobile ? 28 : 36, fontWeight: 400, margin: '0 0 16px' }}>Benefits of Massage</h2>
         <p style={{ fontSize: 15, lineHeight: 1.8, color: C.textLight, maxWidth: 640, margin: '0 auto' }}>
           Experts estimate that upwards of ninety percent of disease is stress-related. And perhaps nothing ages us faster, internally and externally, than high stress. Massage is an effective tool for managing this stress.
         </p>
       </div>
 
       {/* Stress benefits grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 48, maxWidth: 800, margin: '0 auto 48px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : 'repeat(3, 1fr)', gap: 16, marginBottom: 48, maxWidth: 800, margin: '0 auto 48px' }}>
         {stressBenefits.map((b, i) => (
           <div key={i} style={{
             background: C.white, padding: '20px 24px', borderRadius: 8,
@@ -195,7 +201,7 @@ function BenefitsSection() {
         <h3 style={{ ...heading, fontSize: 22, fontWeight: 400, marginBottom: 20, textAlign: 'center' }}>
           Massage can also help address:
         </h3>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px 32px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr 1fr', gap: '10px 32px' }}>
           {healthBenefits.map((b, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'baseline', padding: '6px 0' }}>
               <span style={{ color: C.green, fontSize: 10, flexShrink: 0, marginTop: 4 }}>●</span>
@@ -211,6 +217,7 @@ function BenefitsSection() {
 /* ─── TESTIMONIALS ─── */
 function TestimonialsSection() {
   const C = SiteColors, F = SiteFonts;
+  const mobile = useIsMobile();
   const testimonials = [
     { text: "Absolutely highly recommend Gracie, extremely gifted massage therapist with an outstanding knowledge of the human body, always takes care of me fixing me every single time I get a session with her… simply the best therapist I've ever had!", author: 'Carles Z.' },
     { text: "Gracie isn't just a masseuse — she's a true healer. She goes above and beyond, not only providing excellent massages but also showing genuine care for her clients.", author: 'Client Review' },
@@ -225,16 +232,16 @@ function TestimonialsSection() {
   }, []);
 
   return (
-    <section style={{ padding: '80px 56px', background: C.green, textAlign: 'center' }}>
+    <section style={{ padding: `${mobile ? 48 : 80}px ${mobile ? 20 : 56}px`, background: C.green, textAlign: 'center' }}>
       <SectionLabel><span style={{ color: 'rgba(255,255,255,0.5)' }}>What Clients Say</span></SectionLabel>
-      <div style={{ maxWidth: 640, margin: '0 auto', minHeight: 160, position: 'relative' }}>
+      <div style={{ maxWidth: 640, margin: '0 auto', minHeight: mobile ? 200 : 160, position: 'relative' }}>
         {testimonials.map((t, i) => (
           <div key={i} style={{
             opacity: i === active ? 1 : 0,
             position: i === active ? 'relative' : 'absolute',
             top: 0, left: 0, right: 0, transition: 'opacity 0.6s',
           }}>
-            <p style={{ fontFamily: F.heading, fontSize: 22, fontWeight: 400, fontStyle: 'italic',
+            <p style={{ fontFamily: F.heading, fontSize: mobile ? 18 : 22, fontWeight: 400, fontStyle: 'italic',
               lineHeight: 1.65, color: '#fff', margin: '0 0 20px' }}>"{t.text}"</p>
             <p style={{ fontFamily: F.body, fontSize: 13, color: 'rgba(255,255,255,0.5)',
               letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0 }}>— {t.author}</p>
@@ -256,6 +263,7 @@ function TestimonialsSection() {
 /* ─── HOURS & SCHEDULING ─── */
 function HoursSection() {
   const C = SiteColors, F = SiteFonts;
+  const mobile = useIsMobile();
   const heading = { fontFamily: F.heading, color: C.text };
 
   const policies = [
@@ -266,16 +274,16 @@ function HoursSection() {
   ];
 
   return (
-    <section id="hours" style={{ padding: '80px 56px', scrollMarginTop: 80 }}>
-      <div style={{ textAlign: 'center', marginBottom: 48 }}>
+    <section id="hours" style={{ padding: `${mobile ? 48 : 80}px ${mobile ? 20 : 56}px`, scrollMarginTop: 80 }}>
+      <div style={{ textAlign: 'center', marginBottom: mobile ? 32 : 48 }}>
         <SectionLabel>Plan Your Visit</SectionLabel>
-        <h2 style={{ ...heading, fontSize: 36, fontWeight: 400, margin: '0 0 12px' }}>Hours &amp; Scheduling</h2>
+        <h2 style={{ ...heading, fontSize: mobile ? 28 : 36, fontWeight: 400, margin: '0 0 12px' }}>Hours &amp; Scheduling</h2>
         <p style={{ fontSize: 16, color: C.green, fontWeight: 500, fontFamily: F.body }}>
           Available by Appointment Only
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, maxWidth: 960, margin: '0 auto' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr 1fr', gap: mobile ? 32 : 48, maxWidth: 960, margin: '0 auto' }}>
         {/* Booking info */}
         <div>
           <div style={{
@@ -317,6 +325,7 @@ function HoursSection() {
 /* ─── OUTCALL PROTOCOL ─── */
 function OutcallSection() {
   const C = SiteColors, F = SiteFonts;
+  const mobile = useIsMobile();
   const heading = { fontFamily: F.heading, color: C.text };
 
   const protocols = [
@@ -331,16 +340,16 @@ function OutcallSection() {
   ];
 
   return (
-    <section id="outcall" style={{ padding: '80px 56px', background: C.light, scrollMarginTop: 80 }}>
+    <section id="outcall" style={{ padding: `${mobile ? 48 : 80}px ${mobile ? 20 : 56}px`, background: C.light, scrollMarginTop: 80 }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 36 }}>
           <SectionLabel>Outcall Services</SectionLabel>
-          <h2 style={{ ...heading, fontSize: 36, fontWeight: 400, margin: '0 0 16px' }}>Outcall Protocol</h2>
+          <h2 style={{ ...heading, fontSize: mobile ? 28 : 36, fontWeight: 400, margin: '0 0 16px' }}>Outcall Protocol</h2>
           <p style={{ fontSize: 15, lineHeight: 1.8, color: C.textLight }}>
             My commitment to your safety and health remains the same. Below are the protocols we follow for outcall appointments.
           </p>
         </div>
-        <div style={{ background: C.white, border: `1px solid ${C.border}`, borderRadius: 8, padding: '36px' }}>
+        <div style={{ background: C.white, border: `1px solid ${C.border}`, borderRadius: 8, padding: mobile ? '20px' : '36px' }}>
           {protocols.map((p, i) => (
             <div key={i} style={{
               display: 'flex', gap: 14, alignItems: 'flex-start',
@@ -368,6 +377,7 @@ function OutcallSection() {
 /* ─── FAQ ─── */
 function FAQSection() {
   const C = SiteColors, F = SiteFonts;
+  const mobile = useIsMobile();
   const heading = { fontFamily: F.heading, color: C.text };
 
   const faqs = [
@@ -384,11 +394,11 @@ function FAQSection() {
   ];
 
   return (
-    <section id="faq" style={{ padding: '80px 56px', scrollMarginTop: 80 }}>
+    <section id="faq" style={{ padding: `${mobile ? 48 : 80}px ${mobile ? 20 : 56}px`, scrollMarginTop: 80 }}>
       <div style={{ maxWidth: 740, margin: '0 auto' }}>
-        <div style={{ textAlign: 'center', marginBottom: 48 }}>
+        <div style={{ textAlign: 'center', marginBottom: mobile ? 32 : 48 }}>
           <SectionLabel>Common Questions</SectionLabel>
-          <h2 style={{ ...heading, fontSize: 36, fontWeight: 400, margin: 0 }}>Frequently Asked Questions</h2>
+          <h2 style={{ ...heading, fontSize: mobile ? 28 : 36, fontWeight: 400, margin: 0 }}>Frequently Asked Questions</h2>
         </div>
         {faqs.map((f, i) => <FAQItem key={i} q={f.q} a={f.a} />)}
       </div>
@@ -399,6 +409,7 @@ function FAQSection() {
 /* ─── VIDEOS ─── */
 function VideosSection() {
   const C = SiteColors, F = SiteFonts;
+  const mobile = useIsMobile();
   const heading = { fontFamily: F.heading, color: C.text };
 
   const videos = [
@@ -408,12 +419,12 @@ function VideosSection() {
   ];
 
   return (
-    <section id="videos" style={{ padding: '80px 56px', background: C.light, scrollMarginTop: 80 }}>
-      <div style={{ textAlign: 'center', marginBottom: 48 }}>
+    <section id="videos" style={{ padding: `${mobile ? 48 : 80}px ${mobile ? 20 : 56}px`, background: C.light, scrollMarginTop: 80 }}>
+      <div style={{ textAlign: 'center', marginBottom: mobile ? 32 : 48 }}>
         <SectionLabel>Learn More</SectionLabel>
-        <h2 style={{ ...heading, fontSize: 36, fontWeight: 400, margin: 0 }}>Videos</h2>
+        <h2 style={{ ...heading, fontSize: mobile ? 28 : 36, fontWeight: 400, margin: 0 }}>Videos</h2>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, maxWidth: 1000, margin: '0 auto' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : 'repeat(3, 1fr)', gap: 24, maxWidth: 1000, margin: '0 auto' }}>
         {videos.map((v, i) => (
           <div key={i}>
             <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: 8, overflow: 'hidden', background: '#000' }}>
@@ -433,6 +444,7 @@ function VideosSection() {
 /* ─── CONTACT ─── */
 function ContactSection() {
   const C = SiteColors, F = SiteFonts;
+  const mobile = useIsMobile();
   const heading = { fontFamily: F.heading, color: C.text };
 
   const [formData, setFormData] = React.useState({ subject: '', firstName: '', lastName: '', comment: '', phone: '', email: '' });
@@ -445,12 +457,12 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" style={{ padding: '80px 56px', scrollMarginTop: 80 }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64 }}>
+    <section id="contact" style={{ padding: `${mobile ? 48 : 80}px ${mobile ? 20 : 56}px`, scrollMarginTop: 80 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr 1fr', gap: mobile ? 40 : 64 }}>
         {/* Contact info */}
         <div>
           <SectionLabel>Get in Touch</SectionLabel>
-          <h2 style={{ ...heading, fontSize: 36, fontWeight: 400, margin: '0 0 24px', lineHeight: 1.35 }}>
+          <h2 style={{ ...heading, fontSize: mobile ? 28 : 36, fontWeight: 400, margin: '0 0 24px', lineHeight: 1.35 }}>
             Contact Information
           </h2>
           <div style={{ fontSize: 15, lineHeight: 2, color: C.textLight, fontFamily: F.body, marginBottom: 24 }}>
@@ -479,7 +491,7 @@ function ContactSection() {
                 <option>Other</option>
               </select>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr 1fr', gap: 16 }}>
               <div>
                 <label style={{ fontFamily: F.body, fontSize: 13, color: C.gray, display: 'block', marginBottom: 6 }}>First Name *</label>
                 <input value={formData.firstName} onChange={e => update('firstName', e.target.value)} style={inputStyle}
@@ -497,7 +509,7 @@ function ContactSection() {
                 style={{ ...inputStyle, resize: 'vertical' }}
                 onFocus={e => e.target.style.borderColor = C.green} onBlur={e => e.target.style.borderColor = C.border}></textarea>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr 1fr', gap: 16 }}>
               <div>
                 <label style={{ fontFamily: F.body, fontSize: 13, color: C.gray, display: 'block', marginBottom: 6 }}>Phone</label>
                 <input value={formData.phone} onChange={e => update('phone', e.target.value)} style={inputStyle}

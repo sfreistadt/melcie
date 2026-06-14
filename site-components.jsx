@@ -2,6 +2,17 @@
  * Exports: SiteColors, SiteFonts, Placeholder, SectionLabel, Nav, Footer, FAQItem
  */
 
+/* ─── Responsive hook ─── */
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < breakpoint);
+  React.useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < breakpoint);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, [breakpoint]);
+  return isMobile;
+}
+
 const SiteColors = {
   green: '#2B6B4D',
   greenDark: '#1F5038',
@@ -54,12 +65,19 @@ function SectionLabel({ children }) {
 function Nav() {
   const [scrolled, setScrolled] = React.useState(false);
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const mobile = useIsMobile();
 
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  React.useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -81,6 +99,51 @@ function Nav() {
     transition: 'color 0.2s',
     fontFamily: SiteFonts.body,
   };
+
+  if (mobile) {
+    return (
+      <React.Fragment>
+        <nav style={{
+          position: 'sticky', top: 0, zIndex: 100,
+          padding: '0 20px', height: 60,
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          background: SiteColors.white,
+          borderBottom: `1px solid ${SiteColors.border}`,
+          boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.06)' : 'none',
+          transition: 'box-shadow 0.3s',
+        }}>
+          <div style={{ cursor: 'pointer' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <img src={window.__resources?.logo || "uploads/Gemini_Generated_Image_lz6fo9lz6fo9lz6f.png"}
+              alt="Melcie Massage" style={{ height: 36, display: 'block', borderRadius: 4 }} />
+          </div>
+          <button onClick={() => setMenuOpen(!menuOpen)} style={{
+            background: 'none', border: 'none', cursor: 'pointer', padding: 8,
+            fontSize: 24, color: SiteColors.text, lineHeight: 1,
+          }}>{menuOpen ? '✕' : '☰'}</button>
+        </nav>
+        {menuOpen && (
+          <div style={{
+            position: 'fixed', top: 60, left: 0, right: 0, bottom: 0, zIndex: 99,
+            background: SiteColors.white, padding: '24px 20px',
+            display: 'flex', flexDirection: 'column', gap: 8,
+            overflowY: 'auto',
+          }}>
+            {links.map(l => (
+              <span key={l.id} onClick={() => scrollTo(l.id)} style={{
+                ...navLinkStyle, fontSize: 18, padding: '12px 0',
+                borderBottom: `1px solid ${SiteColors.border}`,
+              }}>{l.label}</span>
+            ))}
+            <a href="https://melciemassage.schedulista.com/" target="_blank" rel="noopener" style={{
+              display: 'block', background: SiteColors.green, color: '#fff', padding: '14px',
+              borderRadius: 4, fontSize: 15, fontWeight: 500, textAlign: 'center',
+              textDecoration: 'none', fontFamily: SiteFonts.body, marginTop: 8,
+            }}>Book Now</a>
+          </div>
+        )}
+      </React.Fragment>
+    );
+  }
 
   return (
     <nav style={{
@@ -168,13 +231,15 @@ function FAQItem({ q, a }) {
 
 /* ─── Footer ─── */
 function Footer() {
+  const mobile = useIsMobile();
+  const px = mobile ? 20 : 56;
   return (
     <footer style={{
-      padding: '56px 56px 40px', background: SiteColors.text,
+      padding: `${mobile ? 40 : 56}px ${px}px ${mobile ? 24 : 40}px`, background: SiteColors.text,
     }}>
       <div style={{
-        display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 48,
-        marginBottom: 48, paddingBottom: 32,
+        display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1fr 1fr 1fr', gap: mobile ? 32 : 48,
+        marginBottom: mobile ? 32 : 48, paddingBottom: 32,
         borderBottom: '1px solid rgba(255,255,255,0.1)',
       }}>
         {/* Logo + tagline */}
@@ -213,7 +278,8 @@ function Footer() {
       </div>
 
       <div style={{
-        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        display: 'flex', flexDirection: mobile ? 'column' : 'row', gap: mobile ? 8 : 0,
+        justifyContent: 'space-between', alignItems: mobile ? 'flex-start' : 'center',
         fontFamily: SiteFonts.body, fontSize: 12, color: 'rgba(255,255,255,0.3)',
       }}>
         <span>© 2024 Melcie Massage. All rights reserved.</span>
@@ -223,4 +289,4 @@ function Footer() {
   );
 }
 
-Object.assign(window, { SiteColors, SiteFonts, Placeholder, SectionLabel, Nav, Footer, FAQItem });
+Object.assign(window, { SiteColors, SiteFonts, Placeholder, SectionLabel, Nav, Footer, FAQItem, useIsMobile });
