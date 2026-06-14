@@ -298,7 +298,7 @@ function Footer() {
       }}>
         <span>© 2024 Melcie Massage. All rights reserved.</span>
         <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <img src="uploads/abmp-member-logo.png" alt="ABMP Member" style={{ height: 40 }} />
+          <a href="http://www.abmp.com/" target="_blank" rel="noopener"><img src="uploads/abmp-member-logo.png" alt="ABMP Member" style={{ height: 40 }} /></a>
           <span>ABMP Member · LMT since 2007</span>
         </span>
       </div>
