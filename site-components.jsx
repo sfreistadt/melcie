@@ -217,7 +217,7 @@ function FAQItem({ q, a }) {
         }}>+</span>
       </div>
       <div style={{
-        maxHeight: open ? 200 : 0, overflow: 'hidden',
+        maxHeight: open ? 500 : 0, overflow: 'hidden',
         transition: 'max-height 0.35s ease',
       }}>
         <p style={{
