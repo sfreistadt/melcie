@@ -17,17 +17,28 @@ function HeroSection() {
       background: C.white
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: window.__resources?.logo || "MelcieLogo.png",
+    src: "MelcieLogoCircle.png",
     alt: "Melcie Massage - Corrective Massage Therapy in Austin TX",
     style: {
-      height: mobile ? 216 : 200,
-      borderRadius: 6,
-      marginBottom: mobile ? 28 : 24
+      width: mobile ? 160 : 180,
+      height: mobile ? 160 : 180,
+      display: 'block',
+      margin: `0 auto ${mobile ? 24 : 20}px`
     }
   }), /*#__PURE__*/React.createElement("h1", {
     style: {
       ...heading,
-      fontSize: mobile ? 28 : 44,
+      fontSize: mobile ? 32 : 48,
+      fontWeight: 400,
+      lineHeight: 1.15,
+      margin: '0 auto 12px',
+      maxWidth: 800,
+      textWrap: 'balance'
+    }
+  }, "Melcie Massage"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      ...heading,
+      fontSize: mobile ? 22 : 32,
       fontWeight: 400,
       lineHeight: 1.15,
       margin: '0 auto 16px',

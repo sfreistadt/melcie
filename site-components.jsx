@@ -28,9 +28,9 @@ function PhoneLink({ style }) {
 }
 
 const SiteColors = {
-  green: '#2B6B4D',
-  greenDark: '#1F5038',
-  greenLight: '#EBF1ED',
+  green: '#0D8085',
+  greenDark: '#0A6468',
+  greenLight: '#E6F3F3',
   gold: '#C9A84C',
   text: '#2C2C2C',
   textLight: '#5A5856',
@@ -127,9 +127,9 @@ function Nav() {
           boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.06)' : 'none',
           transition: 'box-shadow 0.3s',
         }}>
-          <div style={{ cursor: 'pointer' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src={window.__resources?.logo || "MelcieLogo.png"}
-              alt="Melcie Massage" style={{ height: 40, display: 'block', borderRadius: 4 }} />
+          <div style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 10 }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <img src="MelcieLogoCircle.png" alt="Melcie Massage" style={{ width: 36, height: 36, flexShrink: 0 }} />
+            <span style={{ fontFamily: SiteFonts.heading, fontSize: 15, color: SiteColors.text, fontWeight: 400 }}>Melcie Massage</span>
           </div>
           <button onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'} style={{
             background: 'none', border: 'none', cursor: 'pointer', padding: 8,
@@ -182,9 +182,9 @@ function Nav() {
       </div>
 
       {/* Center logo */}
-      <div style={{ cursor: 'pointer' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        <img src={window.__resources?.logo || "MelcieLogo.png"}
-          alt="Melcie Massage" style={{ height: 52, display: 'block', borderRadius: 4 }} />
+      <div style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12 }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <img src="MelcieLogoCircle.png" alt="Melcie Massage" style={{ width: 44, height: 44, flexShrink: 0 }} />
+        <span style={{ fontFamily: SiteFonts.heading, fontSize: 17, color: SiteColors.text, fontWeight: 400 }}>Melcie Massage</span>
       </div>
 
       {/* Right links + CTA */}
@@ -259,8 +259,10 @@ function Footer() {
       }}>
         {/* Logo + tagline */}
         <div>
-          <img src={window.__resources?.logo || "MelcieLogo.png"}
-            alt="Melcie Massage" style={{ height: mobile ? 84 : 112, borderRadius: 4, marginBottom: 16, display: 'block' }} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
+            <img src="MelcieLogoCircle.png" alt="Melcie Massage" style={{ width: mobile ? 56 : 72, height: mobile ? 56 : 72, flexShrink: 0 }} />
+            <span style={{ fontFamily: SiteFonts.heading, fontSize: mobile ? 18 : 22, color: '#fff', fontWeight: 400 }}>Melcie Massage</span>
+          </div>
           <p style={{ fontFamily: SiteFonts.body, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>
             Revitalize &amp; Become Whole
           </p>

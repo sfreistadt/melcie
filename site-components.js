@@ -49,9 +49,9 @@ function PhoneLink({
   }, phone);
 }
 const SiteColors = {
-  green: '#2B6B4D',
-  greenDark: '#1F5038',
-  greenLight: '#EBF1ED',
+  green: '#0D8085',
+  greenDark: '#0A6468',
+  greenLight: '#E6F3F3',
   gold: '#C9A84C',
   text: '#2C2C2C',
   textLight: '#5A5856',
@@ -192,21 +192,31 @@ function Nav() {
       }
     }, /*#__PURE__*/React.createElement("div", {
       style: {
-        cursor: 'pointer'
+        cursor: 'pointer',
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10
       },
       onClick: () => window.scrollTo({
         top: 0,
         behavior: 'smooth'
       })
     }, /*#__PURE__*/React.createElement("img", {
-      src: window.__resources?.logo || "MelcieLogo.png",
+      src: "MelcieLogoCircle.png",
       alt: "Melcie Massage",
       style: {
-        height: 40,
-        display: 'block',
-        borderRadius: 4
+        width: 36,
+        height: 36,
+        flexShrink: 0
       }
-    })), /*#__PURE__*/React.createElement("button", {
+    }), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: SiteFonts.heading,
+        fontSize: 15,
+        color: SiteColors.text,
+        fontWeight: 400
+      }
+    }, "Melcie Massage")), /*#__PURE__*/React.createElement("button", {
       onClick: () => setMenuOpen(!menuOpen),
       "aria-label": menuOpen ? 'Close menu' : 'Open menu',
       style: {
@@ -302,21 +312,31 @@ function Nav() {
     onMouseLeave: e => e.target.style.color = SiteColors.gray
   }, l.label))), /*#__PURE__*/React.createElement("div", {
     style: {
-      cursor: 'pointer'
+      cursor: 'pointer',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12
     },
     onClick: () => window.scrollTo({
       top: 0,
       behavior: 'smooth'
     })
   }, /*#__PURE__*/React.createElement("img", {
-    src: window.__resources?.logo || "MelcieLogo.png",
+    src: "MelcieLogoCircle.png",
     alt: "Melcie Massage",
     style: {
-      height: 52,
-      display: 'block',
-      borderRadius: 4
+      width: 44,
+      height: 44,
+      flexShrink: 0
     }
-  })), /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: SiteFonts.heading,
+      fontSize: 17,
+      color: SiteColors.text,
+      fontWeight: 400
+    }
+  }, "Melcie Massage")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       gap: 28,
@@ -429,16 +449,29 @@ function Footer() {
       paddingBottom: 32,
       borderBottom: '1px solid rgba(255,255,255,0.1)'
     }
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", {
-    src: window.__resources?.logo || "MelcieLogo.png",
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 14,
+      marginBottom: 16
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "MelcieLogoCircle.png",
     alt: "Melcie Massage",
     style: {
-      height: mobile ? 84 : 112,
-      borderRadius: 4,
-      marginBottom: 16,
-      display: 'block'
+      width: mobile ? 56 : 72,
+      height: mobile ? 56 : 72,
+      flexShrink: 0
     }
-  }), /*#__PURE__*/React.createElement("p", {
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: SiteFonts.heading,
+      fontSize: mobile ? 18 : 22,
+      color: '#fff',
+      fontWeight: 400
+    }
+  }, "Melcie Massage")), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: SiteFonts.body,
       fontSize: 14,

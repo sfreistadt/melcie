@@ -8,11 +8,15 @@ function HeroSection() {
   const px = mobile ? 20 : 56;
   return (
     <section style={{ padding: `${mobile ? 60 : 48}px ${px}px ${mobile ? 48 : 48}px`, textAlign: 'center', background: C.white }}>
-      <img src={window.__resources?.logo || "MelcieLogo.png"}
-        alt="Melcie Massage - Corrective Massage Therapy in Austin TX" style={{ height: mobile ? 216 : 200, borderRadius: 6, marginBottom: mobile ? 28 : 24 }} />
-      <h1 style={{ ...heading, fontSize: mobile ? 28 : 44, fontWeight: 400, lineHeight: 1.15, margin: '0 auto 16px', maxWidth: 800, textWrap: 'balance' }}>
-        Corrective Massage Therapy in Austin, TX
+      <img src="MelcieLogoCircle.png"
+        alt="Melcie Massage - Corrective Massage Therapy in Austin TX"
+        style={{ width: mobile ? 160 : 180, height: mobile ? 160 : 180, display: 'block', margin: `0 auto ${mobile ? 24 : 20}px` }} />
+      <h1 style={{ ...heading, fontSize: mobile ? 32 : 48, fontWeight: 400, lineHeight: 1.15, margin: '0 auto 12px', maxWidth: 800, textWrap: 'balance' }}>
+        Melcie Massage
       </h1>
+      <p style={{ ...heading, fontSize: mobile ? 22 : 32, fontWeight: 400, lineHeight: 1.15, margin: '0 auto 16px', maxWidth: 800, textWrap: 'balance' }}>
+        Corrective Massage Therapy in Austin, TX
+      </p>
       <p style={{ fontFamily: F.heading, fontSize: mobile ? 20 : 26, fontStyle: 'italic', color: C.textLight, margin: '0 auto 24px' }}>
         Revitalize &amp; Become Whole
       </p>
